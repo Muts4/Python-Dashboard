@@ -42,9 +42,9 @@ label1 = tk.Label(frame1, text="Stock Ticker", font=("Helvetica", 12))
 label1.pack(pady=10)
 
 def stock_ticker():
-    symbol = 'AAPL'
+    symbol = 'WWD'
 
-    url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=5min&apikey=Q4T92EGO527AR75C'
+    url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=WWD&interval=5min&apikey=Q4T92EGO527AR75C'
     
     try:
         r = requests.get(url)
