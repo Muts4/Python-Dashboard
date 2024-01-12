@@ -49,7 +49,7 @@ def stock_ticker():
     try:
         r = requests.get(url)
         data = r.json()
-        
+        print(r.text)
         latest_timestamp = max(data['Time Series (5min)'], key=lambda x: x)
         stock_price = data['Time Series (5min)'][latest_timestamp]['4. close']
 
@@ -58,7 +58,7 @@ def stock_ticker():
     except Exception as e:
         label1.config(text=f"Error fetching data: {str(e)}")
 
-    label1.after(5000, stock_ticker)
+    label1.after(3600000, stock_ticker)
 
 stock_ticker()
 
